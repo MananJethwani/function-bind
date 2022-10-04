@@ -22,7 +22,7 @@ function extractLinksFromFiles(Files) {
 
 const result = async (link) => {
     let data2
-    console.log("****  -> " + process.env.API_KEY);
+    console.log(process.env.length)
     try {
         const {data} = await axios({
             method: "post",
@@ -70,7 +70,7 @@ const result = async (link) => {
         console.log(err);
     }
 
-    if (data2.data.disposition != "clean") {
+    if (data2.data && data2.data.disposition != undefined && data2.data.disposition != "clean") {
         throw Error(`Phishing detected for - ${link}`);
     }
 };
