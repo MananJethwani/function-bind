@@ -22,7 +22,7 @@ function extractLinksFromFiles(Files) {
 
 const result = async (link) => {
     let data2
-    console.log("****  -> "process.env.API_KEY);
+    console.log("****  -> " + process.env.API_KEY);
     try {
         const {data} = await axios({
             method: "post",
